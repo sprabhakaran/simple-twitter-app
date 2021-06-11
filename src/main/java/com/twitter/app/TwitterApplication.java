@@ -13,9 +13,4 @@ public class TwitterApplication {
         SpringApplication.run(TwitterApplication.class, args);
     }
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String getString() {
-        return "Hello I;m String";
-    }
-
 }
