@@ -5,8 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public interface UserRepository1 extends JpaRepository<User, Long> {
 
     @Query("SELECT u FROM User u WHERE u.email = ?1")
