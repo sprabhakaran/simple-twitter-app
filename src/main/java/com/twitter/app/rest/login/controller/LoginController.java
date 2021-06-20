@@ -1,31 +1,29 @@
 package com.twitter.app.rest.login.controller;
 
 import com.twitter.app.rest.login.model.User;
-import com.twitter.app.rest.login.model.UserRepository1;
+import com.twitter.app.rest.login.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@Controller
+@RestController
 public class LoginController {
 
     @Autowired
-    private UserRepository1 userRepo;
+    private UserRepository userRepo;
 
-//    @GetMapping("/login")
-//    public String viewHomePage() {
-//        return "signup_form";
-//    }
+    @GetMapping("/login")
+    public String viewHomePage() {
+        return "index";
+    }
 
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
-//        model.addAttribute("user", new User());
+        model.addAttribute("user", new User());
         return "signup_form";
     }
 
@@ -40,11 +38,11 @@ public class LoginController {
         return "register_success";
     }
 
-    @GetMapping("/users")
-    public String listUsers(Model model) {
-        List<User> listUsers = userRepo.findAll();
-        model.addAttribute("listUsers", listUsers);
-
-        return "users";
-    }
+//    @GetMapping("/users")
+//    public String listUsers(Model model) {
+//        List<User> listUsers = userRepo.findAll();
+//        model.addAttribute("listUsers", listUsers);
+//
+//        return "users";
+//    }
 }

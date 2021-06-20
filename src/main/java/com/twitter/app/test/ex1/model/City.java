@@ -89,11 +89,12 @@ public class City {
     @Override
     public String toString() {
 
-        var builder = new StringBuilder();
-        builder.append("City{id=").append(id).append(", name=")
-                .append(name).append(", population=")
-                .append(population).append("}");
-
-        return builder.toString();
+//        var builder = new StringBuilder();
+//        builder.append("City{id=").append(id).append(", name=")
+//                .append(name).append(", population=")
+//                .append(population).append("}");
+//
+//        return builder.toString();
+        return "City";
     }
 }
