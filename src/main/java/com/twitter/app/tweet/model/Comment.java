@@ -1,5 +1,4 @@
 package com.twitter.app.tweet.model;
-//git's username update
 import javax.persistence.*;
 
 @Entity
