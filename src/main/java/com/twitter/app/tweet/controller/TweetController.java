@@ -1,14 +1,21 @@
 package com.twitter.app.tweet.controller;
 import com.twitter.app.tweet.model.Tweet;
+import com.twitter.app.tweet.service.TweetDao;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping(value = "/v1/api/tweet")
+import java.util.List;
+
+@RestController
+@RequestMapping(value = "/v1/api/tweets")
 public class TweetController {
+
+    private static TweetDao<Tweet> tweetDao;
+
+    @RequestMapping()
+    public List<Tweet> getTweets(){
+        return tweetDao.getTweets();
+    }
 
     @PostMapping()
     public void addTweet(){
