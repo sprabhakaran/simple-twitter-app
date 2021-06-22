@@ -5,17 +5,23 @@ import javax.persistence.*;
 @Table(name = "Tweet")
 public class Tweet {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
     Long id;
 
+    @Column(name = "created_by", nullable = false)
     Long createdBy;
 
+    @Column(name = "created_time", nullable = false)
     Long createdTime;
 
+    @Column(name = "content", nullable = false)
     String content;
 
-    public Tweet(){
-
+    public Tweet(Long createdBy, String content){
+        this.createdBy = createdBy;
+        this.content = content;
+        this.createdTime = System.currentTimeMillis();
     }
 
     public Long getId() {

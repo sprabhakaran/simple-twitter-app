@@ -7,13 +7,13 @@ import javax.sql.DataSource;
 import java.util.Collections;
 import java.util.List;
 
-public class TweetDaoImpl implements TweetDao<Tweet> {
-
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplateObject;
-
-    @Override
-    public List<Tweet> getTweets() {
-        return Collections.emptyList();
-    }
-}
+//public class TweetDaoImpl implements TweetDao<Tweet> {
+//
+//    private DataSource dataSource;
+//    private JdbcTemplate jdbcTemplateObject;
+//
+//    @Override
+//    public List<Tweet> getTweets() {
+//        return Collections.emptyList();
+//    }
+//}

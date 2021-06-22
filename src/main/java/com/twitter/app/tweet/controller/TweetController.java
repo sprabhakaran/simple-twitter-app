@@ -1,7 +1,8 @@
 package com.twitter.app.tweet.controller;
+
 import com.twitter.app.tweet.model.Tweet;
-import com.twitter.app.tweet.service.TweetDao;
-import org.springframework.stereotype.Controller;
+import com.twitter.app.tweet.service.TweetRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,16 +11,17 @@ import java.util.List;
 @RequestMapping(value = "/v1/api/tweets")
 public class TweetController {
 
-    private static TweetDao<Tweet> tweetDao;
+    @Autowired
+    private TweetRepository tweetRepo;
 
     @RequestMapping()
     public List<Tweet> getTweets(){
-        return tweetDao.getTweets();
+        return tweetRepo.findAll();
     }
 
-    @PostMapping()
-    public void addTweet(){
-        System.out.println("Post method called ...");
+    @RequestMapping("/add")
+    public void addTweet(@RequestParam("content") String content){
+        tweetRepo.save(new Tweet(101L, content) );
     }
 
     @PutMapping
