@@ -16,7 +16,12 @@ spring:
       hibernate:
         hdm2ddl:
           auto: update
+  security:
+    basic:
+      enabled: false
 
+spa:
+  default-file:file:src/main/resources/public/index.html
 
 logging:
   level:
