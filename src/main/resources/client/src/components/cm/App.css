@@ -24,6 +24,10 @@
   color: white;
 }
 
+.del-icon {
+  float: right;
+}
+
 .App-link {
   color: #61dafb;
 }
