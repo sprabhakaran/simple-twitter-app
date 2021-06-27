@@ -1,21 +1,16 @@
 import React from "react";
-
-const ContactCard = () => {
+import user from './styles/images/user.jpeg'
+const ContactCard = (contact) => {
+    const {id, name, email} = contact.contact;
     return (
-        <div className="ui form">
-                <h2>Add Contact</h2>
-                <form className={`ui form`}>
-                    <div className="field">
-                        <label>Name</label>
-                        <input type="text" name="name" placeholder="Name"/>
-                    </div>
-                    <div className="field">
-                        <label>Email</label>
-                        <input type="text" name="email" placeholder="Email"/>
-                    </div>
-                    <button className="fluid ui button">Click Me</button>
-                </form>
+        <div className={`item`}>
+            <img src={user} className={`ui avatar image`} alt="User image"/>
+            <div className={`content`}>
+                <div className={`header`}>{name}</div>
+                <div>{email}</div>
             </div>
+            <i className={`trash alternate outline icon del-icon`} onClick={() => this.props.clickHandler(id)}></i>
+        </div>
     )
 }
 
