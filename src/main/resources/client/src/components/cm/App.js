@@ -3,8 +3,9 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './styles/App.css';
 import Header from './header';
 import AddContact from './add_contact';
-import ContactList from './contact_list';
+import ContactList from './contact_details';
 import {v4 as uuidv4} from 'uuid';
+import ContactDetails from "./contact_details";
 
 const App = () => {
     const [contacts, setContacts] = useState([]);
@@ -35,8 +36,10 @@ const App = () => {
             <Router>
                 <Header/>
                 <Switch>
-                    <Route path={"/"} exact component={() => <ContactList contacts={contacts} deleteContact={remContactHandler}/>}></Route>
-                    <Route path={"/add"} exact component={() => <AddContact addHandler={addContactHandler}/>}/>
+                    {/*<Route path={"/"} exact component={() => <ContactList contacts={contacts} deleteContact={remContactHandler}/>}></Route>*/}
+                    <Route path={"/"} exact render={(props) => <ContactList {...props} contacts={contacts} deleteContact={remContactHandler}/>}></Route>
+                    <Route path={"/add"} exact component={(props) => <AddContact {...props} addHandler={addContactHandler}/>}/>
+                    <Route path={"/contact/:id"} component={ContactDetails}/>
                 </Switch>
             </Router>
         </div>

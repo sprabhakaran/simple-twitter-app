@@ -13,7 +13,7 @@ class AddContact extends React.Component {
         }
         console.log(this.props)
         this.props.addHandler(this.state);
-        console.log(this.props);
+        this.props.history.push("/");
     }
     render() {
         return(
