@@ -34,5 +34,8 @@ build/
 
 /src/main/resources/client/node_modules
 
+/src/main/resources/simple-json-server
+**/src/main/resources/simple-json-server/node_modules
+*eslint*
 .mvn
 mvn*
