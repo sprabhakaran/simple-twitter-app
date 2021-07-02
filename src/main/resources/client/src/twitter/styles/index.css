@@ -31,7 +31,7 @@ body > header {
     right: 0;
     height: 46px;
     background: #FFF;
-    border-bottom: 3px solid rgba(0,0,0,0.05);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
 }
 
 #root {
@@ -46,7 +46,7 @@ body > header {
 }
 
 .t-nav-left, .t-nav-right {
-    border: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .t-nav-left {
@@ -76,14 +76,55 @@ body > header {
     height: 35px;
 }
 
-.t-prof-names > div {
+.t-prof-names {
     white-space: nowrap;
 }
 
 .t-main-center {
-    background-color: cadetblue;
+
+}
+
+.t-main-home {
+    height: 50px;
+    border-bottom: 2px solid #000;
+    vertical-align: middle;
+    font-size: 20px;
+    line-height: 47px;
+    padding-left: 20px;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+.t-txtarea {
+    width: 95%;
+    padding: 3px;
+    border: 0px none;
+    resize: none;
+}
+
+.t-post-input-holder {
+    margin: 3px;
+    border-bottom: 1px solid black;
+    padding: 3px;
 }
 
 .t-nav-right {
     background-color: darkolivegreen;
+}
+
+.t-action-holder {
+    display: flex;
+    flex-direction: column;
+}
+
+.t-action-holder > div {
+    display: grid;
+    grid-template-columns: 15% auto;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 5px 3px;
+}
+
+.t-action-holder > div:hover {
+    background-color: red;
+    cursor: pointer;
 }
