@@ -1,6 +1,8 @@
 import React, {Component} from "react";
-import Header from "../twitter/components/header";
-import Main from "./components/main";
+import LeftNavigation from "../twitter/components/left_nav";
+import RightNavigation from "../twitter/components/right_nav";
+import Main from "../twitter/components/main";
+import './styles/index.css';
 
 class App extends Component {
     constructor(props) {
@@ -9,8 +11,10 @@ class App extends Component {
 
     render() {
         return (
-            <div className={"t-main"}>
-
+            <div className={"t-container"}>
+                <LeftNavigation />
+                <Main />
+                <RightNavigation />
             </div>
         );
     }
